@@ -1,0 +1,28 @@
+<br>
+<h1>The Only Travel Planner You'll Ever Need Period</h1>
+<div class="topDiv">
+    <h3>Where Do You Want To Go?</h3>
+    <form>
+        <input id="0" class="input" type='text' placeholder="Add a City..." ng-model="inputCity"></input>
+        <button class="add-btn" ng-click="addCity()">Add</button>
+    </form>
+</div>
+
+
+<div class="cityDiv" ng-repeat="city in cities track by $index"> 
+    <button class="clear" ng-click="deleteAttraction($index)">Clear</button>
+    <button class="clear" ng-click="deleteCity($index)">Delete City</button>
+    <br>
+    <h2>{{city.name}}</h2>
+    <h4>What Do You Want to See?</h4>
+    <form name="attractionForm"> 
+        <input class="input2" type='text' ng-model="inputAttraction" placeholder="Add a Sight..."></input>
+        <button class="send" ng-click="addAttraction($index, inputAttraction)">Add</button>
+    </form>
+    <ul>
+         <li style="list-style: none;", ng-repeat="x in cities[$index].attractions track by $index">{{city.attractions[$index]}}</li>
+    <ul>    
+</div>
+    <button class="send" ng-click="insertData()">Save</button>
+
+    <!--<button class="send" ng-click="getData()">Get Data</button>-->

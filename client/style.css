@@ -1,0 +1,58 @@
+body {
+  background-color: dodgerblue;
+   margin-top: -22px; 
+  margin-bottom: 0px; 
+  margin-left: 0px; 
+  margin-right: 0px;
+}
+    
+
+li {
+  height: 30px;
+  font-size: 1.5em;
+  padding-bottom: 10px
+}
+
+.container {
+  text-align: center;
+  background-color: dodgerblue
+}
+.chatBox {
+  margin: 0 auto;
+  width: 700px;
+  height: 600px;
+  background-color:dodgerblue;
+  overflow-y: scroll;
+  text-align: left;
+  padding: 10px;
+
+}
+.message {
+  width: 100%;
+  text-align: left;
+}
+
+.input {
+  width: 70%;
+  height: 30px
+}
+
+.input2 {
+  width: 30%;
+  height: 30px
+}
+
+.topDiv {
+  background-color: dodgerblue;
+  height: 110px
+}
+
+.cityDiv {
+  background-color: seagreen;
+
+}
+
+.clear {
+  float: left
+
+}
