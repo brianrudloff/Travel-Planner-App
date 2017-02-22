@@ -1,34 +1,28 @@
 angular
-  .module('Codesmith.HomeController', ['ngRoute', 'Codesmith.UserFactory', 'Codesmith.MessageFactory', 'Codesmith.DataFactory'])
+  .module('Codesmith.HomeController', ['ngRoute', 'Codesmith.DataFactory'])
   .controller('HomeController', HomeController);
 
+  function HomeController($scope, DataFactory, $interval, $http) {
+    $scope.cities = [];
 
-function HomeController($scope, MessageFactory, UserFactory, DataFactory, $interval, $http) {
-  $scope.cities = [];
-
-
- getData();
-  
-  //$interval($scope.insertData, 1000)
+  getData();
 
   $scope.addCity = function () {
     let cityName = $scope.inputCity;
     $scope.cities.push({
-            name: cityName,
-            cityIndex: $scope.cities.length,
-            attractions: []
-        });
+      name: cityName,
+      cityIndex: $scope.cities.length,
+      attractions: []
+    });
     $scope.inputCity = '';
-        console.log($scope.cities)
-    //DataFactory.postRequest(cityName)
-    };
+    console.log($scope.cities);
+  };
 
   $scope.addAttraction = function (cityIndex, attraction) {
     console.log($scope.cities[cityIndex].attractions);
     $scope.cities[cityIndex].attractions.push(attraction);
-      console.log("jsonnnnnn", $scope.cities)
+    console.log("json", $scope.cities);
     $scope.inputAttraction = '';
-    
   }
 
   $scope.deleteAttraction = function (cityIndex) {
@@ -64,6 +58,5 @@ function HomeController($scope, MessageFactory, UserFactory, DataFactory, $inter
          console.log($scope.cities)
        })
     };
-  
 }
-//AIzaSyC8U2oDzEn-Du955VhKj_qaaQbg1wHkzrY
+

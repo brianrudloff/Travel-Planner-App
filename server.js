@@ -37,9 +37,8 @@ app.post('/save',function(req,res){
       if (data) {
         console.log(data)
       } else {
-        console.log("ERRRRROR!", err)
+        console.log("Error!", err)
       }
-      
     });
   })
 })
@@ -51,7 +50,6 @@ app.get('/save', function(req, res){
       (res.send(data))
     })
 });
-
 
 app.listen(3000, () => {
   console.log('Listening on port 3000');
