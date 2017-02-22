@@ -3,13 +3,12 @@ const app = angular
 
 app.config(configFunction);
 
-function configFunction($routeProvider, $locationProvider) {
-
+function configFunction($routeProvider) {
   $routeProvider
     .when('/', {
       templateUrl: './partials/home.html',
       controller: 'HomeController',
-    })
+    });
 }
 
 

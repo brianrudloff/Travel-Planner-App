@@ -2,10 +2,9 @@ angular
   .module('Codesmith.HomeController', ['ngRoute', 'Codesmith.DataFactory'])
   .controller('HomeController', HomeController);
 
+function HomeController($scope, DataFactory, $interval, $http) {
 
-
-  function HomeController($scope, DataFactory, $interval, $http) {
-    $scope.cities = [];
+  $scope.cities = [];
 
   getData();
 
@@ -14,16 +13,16 @@ angular
     $scope.cities.push({
       name: cityName,
       cityIndex: $scope.cities.length,
-      attractions: []
+      attractions: [],
     });
     $scope.inputCity = '';
-    console.log($scope.cities);
+    console.log('scope cities', $scope.cities);
   };
 
   $scope.addAttraction = function (cityIndex, attraction) {
-    console.log($scope.cities[cityIndex].attractions);
+    console.log('attractions', $scope.cities[cityIndex].attractions);
     $scope.cities[cityIndex].attractions.push(attraction);
-    console.log("json", $scope.cities);
+    console.log('json', $scope.cities);
     $scope.inputAttraction = '';
   }
 
@@ -35,30 +34,30 @@ angular
     $scope.cities.splice(cityIndex, 1);
   }
 
-  $scope.insertData = function(){
-       console.log('data inserting')
-       $http({
-         url: '/save',
-         method: 'POST',
-         data: 'message=' + JSON.stringify($scope.cities),
-         headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-       })
-       .then(function(httpResponse){
-         console.log(httpResponse);
-       })
-    };
+  $scope.insertData = function() {
+    console.log('data inserting');
+    $http({
+      url: '/save',
+      method: 'POST',
+      data: 'message=' + JSON.stringify($scope.cities),
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    })
+    .then(function (httpResponse) {
+      console.log(httpResponse);
+    })
+  };
 
-    function getData(){
-       console.log('getting data')
-       $http({
-         url: '/save',
-         method: 'GET',
-       })
-       .then(function(httpResponse){
-         console.log(httpResponse)
-        $scope.cities = JSON.parse(httpResponse.data[httpResponse.data.length-1].plan);
-         console.log($scope.cities)
-       })
-    };
+  function getData() {
+    console.log('getting data');
+    $http({
+      url: '/save',
+      method: 'GET',
+    })
+    .then(function(httpResponse) {
+      console.log(httpResponse);
+      $scope.cities = JSON.parse(httpResponse.data[httpResponse.data.length-1].plan);
+      console.log($scope.cities);
+    });
+  }
 }
 
