@@ -1,11 +1,22 @@
 body {
-  background-color: dodgerblue;
+  background-color: #286da8;
    margin-top: -22px; 
   margin-bottom: 0px; 
   margin-left: 0px; 
   margin-right: 0px;
 }
+
+h1 {
+  color: white;
+}
+
+h3 {
+  color:#cd5360;
+}
     
+input {
+  outline: none;
+}
 
 li {
   height: 30px;
@@ -15,13 +26,13 @@ li {
 
 .container {
   text-align: center;
-  background-color: dodgerblue
+  background-color: #286da8;
 }
 .chatBox {
   margin: 0 auto;
   width: 700px;
   height: 600px;
-  background-color:dodgerblue;
+  background-color:#286da8;
   overflow-y: scroll;
   text-align: left;
   padding: 10px;
@@ -34,7 +45,9 @@ li {
 
 .input {
   width: 70%;
-  height: 30px
+  height: 25px;
+  border-color: #b37d4e;
+  color:#b37d4e;
 }
 
 .input2 {
@@ -42,17 +55,42 @@ li {
   height: 30px
 }
 
+::-webkit-input-placeholder {
+   color: #b37d4e;
+}
+
 .topDiv {
-  background-color: dodgerblue;
+  background-color: #286da8;
   height: 110px
 }
 
 .cityDiv {
-  background-color: seagreen;
-
+  background-color: #438496;
+  border-color: #cd5360;
+  border-width: 3px;
+  border-style: solid;
 }
 
 .clear {
   float: left
+}
 
+.add-btn {
+  height: 30px;
+  margin-left: -4px;
+  background-color: #286da8;
+  border-style: solid;
+  color: #b37d4e;
+  border-color: #b37d4e;
+}
+
+#delete_bttn {
+  float: right;
+  background-color: #438496;
+  border-style: none;
+  font-size: 1.5em;
+}
+
+#clear_bttn {
+  float: right;
 }

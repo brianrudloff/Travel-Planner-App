@@ -1,5 +1,5 @@
 const app = angular
-  .module('myApp', ['ngRoute','Codesmith.HomeController', 'Codesmith.DataFactory']);
+  .module('myApp', ['ngRoute', 'Codesmith.HomeController', 'Codesmith.DataFactory']);
 
 app.config(configFunction);
 

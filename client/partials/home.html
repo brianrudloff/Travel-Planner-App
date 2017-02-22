@@ -9,8 +9,7 @@
 </div>
 
 <div class="cityDiv" ng-repeat="city in cities track by $index"> 
-  <button class="clear" ng-click="deleteAttraction($index)">Clear</button>
-  <button class="clear" ng-click="deleteCity($index)">Delete City</button>
+  <button id="delete_bttn" class="clear" ng-click="deleteCity($index)">X</button>
   <br>
   <h2>{{city.name}}</h2>
   <h4>What Do You Want to See?</h4>
@@ -21,5 +20,6 @@
   <ul>
     <li style="list-style: none;", ng-repeat="x in cities[$index].attractions track by $index">{{city.attractions[$index]}}</li>
   <ul>    
+  <button id="clear_bttn" class="clear" ng-click="deleteAttraction($index)">Clear</button>
 </div>
   <button class="send" ng-click="insertData()">Save</button>
