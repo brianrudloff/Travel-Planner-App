@@ -2,6 +2,8 @@ angular
   .module('Codesmith.HomeController', ['ngRoute', 'Codesmith.DataFactory'])
   .controller('HomeController', HomeController);
 
+
+
   function HomeController($scope, DataFactory, $interval, $http) {
     $scope.cities = [];
 
