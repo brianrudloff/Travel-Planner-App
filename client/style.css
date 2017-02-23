@@ -18,29 +18,31 @@ input {
   outline: none;
 }
 
+button:focus {outline:0;}
+
 li {
   height: 30px;
   font-size: 1.5em;
   padding-bottom: 10px
 }
 
+.leftDiv {
+  float: left;
+  width: 30%;
+}
+
+.rightDiv {
+    float: left;
+  width: 70%;
+}
+
+#formDiv {
+  clear:both;
+}
+
 .container {
   text-align: center;
   background-color: #286da8;
-}
-.chatBox {
-  margin: 0 auto;
-  width: 700px;
-  height: 600px;
-  background-color:#286da8;
-  overflow-y: scroll;
-  text-align: left;
-  padding: 10px;
-
-}
-.message {
-  width: 100%;
-  text-align: left;
 }
 
 .input {
@@ -51,8 +53,12 @@ li {
 }
 
 .input2 {
-  width: 30%;
-  height: 30px
+  width: 60%;
+  height: 20px;
+  float: left;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  border-color: #b37d4e;
 }
 
 ::-webkit-input-placeholder {
@@ -69,10 +75,13 @@ li {
   border-color: #cd5360;
   border-width: 3px;
   border-style: solid;
+  overflow: auto;
 }
 
-.clear {
-  float: left
+#cityName {
+  float: left;
+  margin-left: 10px;
+  color: white;
 }
 
 .add-btn {
@@ -91,6 +100,34 @@ li {
   font-size: 1.5em;
 }
 
+#want_to_see {
+  float: left;
+  font-size: 1em;
+  margin-left: -100px;
+}
+
+#add_attraction_bttn {
+  float: left;
+  height: 26px;
+  background-color: #438496;
+  color: #b37d4e;
+  border-color: #b37d4e;
+  border-style: solid;
+}
+
 #clear_bttn {
   float: right;
+  margin-top: -5px;
+  background-color: #438496;
+  border-style: none;
+}
+
+#save_bttn {
+  color: #b37d4e;
+  border-color: #b37d4e;
+  border-style: solid;
+  background-color: #286da8;
+  margin-top: 10px;
+  float: left;
+  margin-left: 10px;
 }

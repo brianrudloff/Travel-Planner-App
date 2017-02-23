@@ -9,17 +9,23 @@
 </div>
 
 <div class="cityDiv" ng-repeat="city in cities track by $index"> 
-  <button id="delete_bttn" class="clear" ng-click="deleteCity($index)">X</button>
-  <br>
-  <h2>{{city.name}}</h2>
-  <h4>What Do You Want to See?</h4>
-  <form name="attractionForm"> 
-    <input class="input2" type='text' ng-model="inputAttraction" placeholder="Add a Sight..."></input>
-    <button class="send" ng-click="addAttraction($index, inputAttraction)">Add</button>
-  </form>
+  <button id="delete_bttn" ng-click="deleteCity($index)">X</button>
+  <div class="leftDiv">
+    <div>
+    <h2 id="cityName">{{city.name}}</h2>
+    </div>
+    <div id="formDiv">
+      <form name="attractionForm"> 
+        <input class="input2" type='text' ng-model="inputAttraction" placeholder="Add an attraction..."></input>
+        <button id="add_attraction_bttn" ng-click="addAttraction($index, inputAttraction)">Add</button>
+      </form>
+    </div>
+  </div>  
+  <div class="rightDiv">
   <ul>
     <li style="list-style: none;", ng-repeat="x in cities[$index].attractions track by $index">{{city.attractions[$index]}}</li>
-  <ul>    
-  <button id="clear_bttn" class="clear" ng-click="deleteAttraction($index)">Clear</button>
+  <ul>     
+  </div>
+  <button id="clear_bttn" ng-click="deleteAttraction($index)">Clear Attractions</button>
 </div>
-  <button class="send" ng-click="insertData()">Save</button>
+  <button id="save_bttn" ng-click="insertData()">Save Itinerary</button>
