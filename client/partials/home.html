@@ -1,7 +1,11 @@
-<br>
-<h1>Travel Planner JS</h1>
 <div class="topDiv">
-  <h3>Where Do You Want To Go?</h3>
+  <img id='icon' src='./partials/1.png'/>
+  <p id="title">Travel Planner JS</p>
+  <button id="save_bttn" ng-click="insertData()">Save Itinerary</button>
+</div>
+
+<div id='where'>
+  <p>Where Do You Want To Go?</p>
   <form>
     <input id="0" class="input" type='text' placeholder="Add a City..." ng-model="inputCity"></input>
     <button class="add-btn" ng-click="addCity()">Add</button>
@@ -28,4 +32,4 @@
   </div>
   <button id="clear_bttn" ng-click="deleteAttraction($index)">Clear Attractions</button>
 </div>
-  <button id="save_bttn" ng-click="insertData()">Save Itinerary</button>
+  
