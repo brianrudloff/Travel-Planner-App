@@ -5,9 +5,9 @@
 </div>
 
 <div id='where'>
-  <p>Where Do You Want To Go?</p>
+  <p id='where_text'>Where Do You Want To Go?</p>
   <form>
-    <input id="0" class="input" type='text' placeholder="Add a City..." ng-model="inputCity"></input>
+    <input id="city_input" class="input" type='text' placeholder="Add a city..." ng-model="inputCity"></input>
     <button class="add-btn" ng-click="addCity()">Add</button>
   </form>
 </div>
@@ -16,7 +16,7 @@
   <button id="delete_bttn" ng-click="deleteCity($index)">X</button>
   <div class="leftDiv">
     <div>
-    <h2 id="cityName">{{city.name}}</h2>
+    <p id="cityName" style='color:black'>{{city.name}}</p>
     </div>
     <div id="formDiv">
       <form name="attractionForm"> 

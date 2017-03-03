@@ -23,9 +23,10 @@ li {
 .topDiv {
   background-color: #286da8;
   height: 50px; 
-  /*border-color: black;
-  border-width: 10px;
-  border-style: solid;*/
+  border-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #b37d4e;
+  border-bottom-width: 1px;
   display: table;
   width: 100%;
 }
@@ -62,30 +63,86 @@ li {
   margin-top: 5px;
 }
 
+#where {
+  padding-bottom: 10px;
+ /*background-color: #fdf5e6 ;
+ width: 30%;
+ margin: 0 auto;
+ border-style: solid;
+ border-width: 1px;
+ border-radius: 5px;
+ border-color: black;
+ margin-top: 10px;*/
+}
+
+#where_text {
+  margin-left: 10px;
+  font-size: 1em;
+  margin-bottom: 0px;
+}
+
+#city_input {
+  width: 20%;
+  height: 25px;
+  border-color: black;
+  border-width: 1px;
+  border-radius: 5px;
+  color:black;
+  margin-left: 10px;
+  margin-top: -20px;
+}
+
+.add-btn {
+  height: 30px;
+  margin-left: -4px;
+  background-color: #286da8;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  color: white;
+  border-color: black;
+}
+
+.cityDiv {
+  background-color:#fdf5e6;
+  border-color: #b37d4e;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 5px;
+  overflow: auto;
+  width: 98%;
+  margin: 0 auto;
+  margin-top:5px;
+  padding-bottom: 10px;
+  padding-bottom: 10px;
+}
+
 .leftDiv {
   float: left;
   width: 30%;
 }
 
+#cityName {
+  color: black;
+  font-size: 1.5em;
+  float: left;
+  margin-left: 10px;
+}
+
 .rightDiv {
-    float: left;
+  float: left;
   width: 70%;
+}
+
+#delete_bttn {
+  float: right;
+  background-color: #fdf5e6;
+  border-style: none;
+  font-size: 1.5em;
 }
 
 #formDiv {
   clear:both;
-}
-
-/*.container {
-  text-align: center;
-  background-color: #286da8;
-}*/
-
-.input {
-  width: 70%;
-  height: 25px;
-  border-color: #b37d4e;
-  color:#b37d4e;
 }
 
 .input2 {
@@ -95,18 +152,24 @@ li {
   margin-left: 10px;
   margin-bottom: 10px;
   border-color: #b37d4e;
+  border-radius: 5px;
+  border-width:1px;
+}
+
+#add_attraction_bttn {
+  float: left;
+  height: 26px;
+  background-color: #286da8;
+  color: white;
+  border-color: #b37d4e;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 1px;
 }
 
 ::-webkit-input-placeholder {
-   color: #b37d4e;
-}
+   color: #DEB887;
 
-.cityDiv {
-  background-color: #438496;
-  border-color: #cd5360;
-  border-width: 3px;
-  border-style: solid;
-  overflow: auto;
 }
 
 #cityName {
@@ -115,40 +178,24 @@ li {
   color: white;
 }
 
-.add-btn {
-  height: 30px;
-  margin-left: -4px;
-  background-color: #286da8;
-  border-style: solid;
-  color: #b37d4e;
-  border-color: #b37d4e;
-}
-
-#delete_bttn {
-  float: right;
-  background-color: #438496;
-  border-style: none;
-  font-size: 1.5em;
-}
-
 #want_to_see {
   float: left;
   font-size: 1em;
   margin-left: -100px;
 }
 
-#add_attraction_bttn {
-  float: left;
-  height: 26px;
-  background-color: #438496;
-  color: #b37d4e;
-  border-color: #b37d4e;
-  border-style: solid;
-}
-
 #clear_bttn {
   float: right;
   margin-top: -5px;
-  background-color: #438496;
-  border-style: none;
+  margin-right: 5px;
+  background-color: #cd5360;
+  border-color: #802A2A;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+
+}
+
+.container {
+  height: 100%;
 }
