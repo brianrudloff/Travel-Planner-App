@@ -4,12 +4,52 @@ angular
 
 function HomeController($scope, DataFactory, $interval, $http) {
 
+  let currLat = null;
+  let currLong = null;
+
+  if ("geolocation" in navigator) {
+    console.log('Geolocation is available');
+  } else {
+    console.log('geolocation is not available')
+  }
+
+  navigator.geolocation.getCurrentPosition(function(position) {
+    currLat = position.coords.latitude;
+    currLong = position.coords.longitude;
+  });
+
+var geocoder = new google.maps.Geocoder();
+var address = "new york";
+
+  function getLat (city) {
+    geocoder.geocode( { 'address': city}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        return results[0].geometry.location.lat();
+      } 
+    }); 
+  }
+
+  function getLong (city) {
+    geocoder.geocode( { 'address': city}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        return results[0].geometry.location.lng();
+      } 
+    }); 
+  }
+
+  // const service = new google.maps.places.PlacesService(map);
+  // service.textSearch(request, callback);
+
   $scope.cities = [];
 
   getData();
 
   $scope.addCity = function () {
     let cityName = $scope.inputCity;
+    let cityLat = getLat(cityName);
+    let cityLong = getLong(cityName);
+    console.log('cityLat', cityLat)
+    console.log('citylong', cityLong)
     $scope.cities.push({
       name: cityName,
       cityIndex: $scope.cities.length,
