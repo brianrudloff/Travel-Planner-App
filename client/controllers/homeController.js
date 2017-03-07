@@ -54,11 +54,6 @@ function HomeController($scope, DataFactory, $interval, $http) {
 
       var pyrmont = new google.maps.LatLng($scope.cities[cityIndex].latitude, $scope.cities[cityIndex].longitude);
 
-      // map = new google.maps.Map(document.getElementById('map'), {
-      //     center: pyrmont,
-      //     zoom: 15
-      //   });
-
       var request = {
         location: pyrmont,
         radius: '500',
@@ -70,16 +65,34 @@ function HomeController($scope, DataFactory, $interval, $http) {
 
       function callback(results, status) {
         console.log('results', results)
+
+           console.log('attractions', $scope.cities[cityIndex].attractions);
+            let attractionObj = {
+              name: results[0].name,
+              address: results[0].formatted_address,
+              rating: results[0].rating,
+              icon: results[0].icon,
+              open: results[0].opening_hours.open_now,
+              
+            }
+            console.log('attraction obj', attractionObj)
+            $scope.cities[cityIndex].attractions.push(attractionObj);
+            console.log('json', $scope.cities);
+            $scope.inputAttraction = '';
+
+
+
+
       }
 
 
 
 
 
-    console.log('attractions', $scope.cities[cityIndex].attractions);
-    $scope.cities[cityIndex].attractions.push(attraction);
-    console.log('json', $scope.cities);
-    $scope.inputAttraction = '';
+    // console.log('attractions', $scope.cities[cityIndex].attractions);
+    // $scope.cities[cityIndex].attractions.push(attraction);
+    // console.log('json', $scope.cities);
+    // $scope.inputAttraction = '';
   }
 
   $scope.deleteAttraction = function (cityIndex) {
