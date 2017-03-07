@@ -3,7 +3,9 @@ angular
   .controller('HomeController', HomeController);
 
 function HomeController($scope, DataFactory, $interval, $http) {
-
+  var geocoder = new google.maps.Geocoder();
+  let cityLat = null;
+  let cityLong = null;  
   let currLat = null;
   let currLong = null;
 
@@ -18,48 +20,62 @@ function HomeController($scope, DataFactory, $interval, $http) {
     currLong = position.coords.longitude;
   });
 
-var geocoder = new google.maps.Geocoder();
-var address = "new york";
-
-  function getLat (city) {
-    geocoder.geocode( { 'address': city}, function(results, status) {
-      if (status == google.maps.GeocoderStatus.OK) {
-        return results[0].geometry.location.lat();
-      } 
-    }); 
-  }
-
-  function getLong (city) {
-    geocoder.geocode( { 'address': city}, function(results, status) {
-      if (status == google.maps.GeocoderStatus.OK) {
-        return results[0].geometry.location.lng();
-      } 
-    }); 
-  }
-
-  // const service = new google.maps.places.PlacesService(map);
-  // service.textSearch(request, callback);
-
   $scope.cities = [];
 
   getData();
 
   $scope.addCity = function () {
     let cityName = $scope.inputCity;
-    let cityLat = getLat(cityName);
-    let cityLong = getLong(cityName);
-    console.log('cityLat', cityLat)
-    console.log('citylong', cityLong)
-    $scope.cities.push({
-      name: cityName,
-      cityIndex: $scope.cities.length,
-      attractions: [],
-    });
+    geocoder.geocode( { 'address': cityName}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        cityLat = results[0].geometry.location.lat();
+        cityLong = results[0].geometry.location.lng();
+        $scope.cities.push({
+        name: cityName,
+        cityIndex: $scope.cities.length,
+        attractions: [],
+        latitude: cityLat,
+        longitude: cityLong,
+        });
+      } 
+    }); 
     $scope.inputCity = '';
     console.log('scope cities', $scope.cities);
   };
 
+
+
   $scope.addAttraction = function (cityIndex, attraction) {
+    
+    var map;
+    var service;
+    var infowindow;
+
+
+      var pyrmont = new google.maps.LatLng($scope.cities[cityIndex].latitude, $scope.cities[cityIndex].longitude);
+
+      // map = new google.maps.Map(document.getElementById('map'), {
+      //     center: pyrmont,
+      //     zoom: 15
+      //   });
+
+      var request = {
+        location: pyrmont,
+        radius: '500',
+        query: attraction
+      };
+
+      service = new google.maps.places.PlacesService(document.createElement('div'));
+      service.textSearch(request, callback);
+
+      function callback(results, status) {
+        console.log('results', results)
+      }
+
+
+
+
+
     console.log('attractions', $scope.cities[cityIndex].attractions);
     $scope.cities[cityIndex].attractions.push(attraction);
     console.log('json', $scope.cities);
