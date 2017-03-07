@@ -27,7 +27,12 @@
   </div>  
   <div class="rightDiv">
   <ul>
-    <li style="list-style: none;", ng-repeat="x in cities[$index].attractions track by $index">{{city.attractions[$index]}}</li>
+    <li style="list-style: none;", ng-repeat="x in cities[$index].attractions track by $index">
+      <p>{{city.attractions[$index].name}}</p><img src='{{city.attractions[$index].icon}}'/>
+      <p>{{city.attractions[$index].rating}}</p>
+      <p>{{city.attractions[$index].open}}</p>
+      <p>{{city.attractions[$index].address}}</p>
+    </li>
   <ul>     
   </div>
   <button id="clear_bttn" ng-click="deleteAttraction($index)">Clear Attractions</button>

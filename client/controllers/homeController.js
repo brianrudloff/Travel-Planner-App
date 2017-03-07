@@ -79,10 +79,6 @@ function HomeController($scope, DataFactory, $interval, $http) {
             $scope.cities[cityIndex].attractions.push(attractionObj);
             console.log('json', $scope.cities);
             $scope.inputAttraction = '';
-
-
-
-
       }
 
 
