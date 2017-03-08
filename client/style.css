@@ -7,12 +7,14 @@ body {
 h3 {
   color:#cd5360;
 }
-    
+
 input {
   outline: none;
 }
 
-button:focus {outline:0;}
+button:focus {
+  outline:0;
+}
 
 li {
   font-size: 1.5em;
