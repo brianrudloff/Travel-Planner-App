@@ -15,9 +15,7 @@ input {
 button:focus {outline:0;}
 
 li {
-  height: 30px;
   font-size: 1.5em;
-  padding-bottom: 10px
 }
 
 .topDiv {
@@ -65,14 +63,6 @@ li {
 
 #where {
   padding-bottom: 10px;
- /*background-color: #fdf5e6 ;
- width: 30%;
- margin: 0 auto;
- border-style: solid;
- border-width: 1px;
- border-radius: 5px;
- border-color: black;
- margin-top: 10px;*/
 }
 
 #where_text {
@@ -110,6 +100,8 @@ li {
   border-style: solid;
   border-radius: 5px;
   overflow: auto;
+  height: auto;
+  clear: both;
   width: 98%;
   margin: 0 auto;
   margin-top:5px;
@@ -165,6 +157,49 @@ li {
   border-style: solid;
   border-radius: 5px;
   border-width: 1px;
+}
+
+#attraction_header {
+ width: 50%;
+}
+
+#attraction_name {
+float: left;
+padding-bottom: 10px;
+}
+
+#attractionIcon {
+  width: 30px;
+  padding-left: 20px;
+  margin-top: 22px;
+}
+
+#attraction_details {
+  font-size: .6em;
+  background-color: white;
+  width: 60%;
+  height: auto;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #b37d4e;
+  border-width: 1px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+
+.details {
+  padding-left: 5px;
+  text-align: left;
+  margin-bottom: 2px;
+}
+
+#rating {
+  text-align: left;
+}
+
+#list_item {
+  margin-bottom: 20px;
 }
 
 ::-webkit-input-placeholder {

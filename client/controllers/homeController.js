@@ -72,8 +72,6 @@ function HomeController($scope, DataFactory, $interval, $http) {
               address: results[0].formatted_address,
               rating: results[0].rating,
               icon: results[0].icon,
-              open: results[0].opening_hours.open_now,
-              
             }
             console.log('attraction obj', attractionObj)
             $scope.cities[cityIndex].attractions.push(attractionObj);

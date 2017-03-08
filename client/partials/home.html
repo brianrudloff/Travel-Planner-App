@@ -14,6 +14,7 @@
 
 <div class="cityDiv" ng-repeat="city in cities track by $index"> 
   <button id="delete_bttn" ng-click="deleteCity($index)">X</button>
+  
   <div class="leftDiv">
     <div>
     <p id="cityName" style='color:black'>{{city.name}}</p>
@@ -25,16 +26,25 @@
       </form>
     </div>
   </div>  
+  
   <div class="rightDiv">
   <ul>
-    <li style="list-style: none;", ng-repeat="x in cities[$index].attractions track by $index">
-      <p>{{city.attractions[$index].name}}</p><img src='{{city.attractions[$index].icon}}'/>
-      <p>{{city.attractions[$index].rating}}</p>
-      <p>{{city.attractions[$index].open}}</p>
-      <p>{{city.attractions[$index].address}}</p>
+    <li style="list-style: none;", ng-repeat="attraction in cities[$index].attractions track by $index">
+      <div id='list_item'>
+        <div id='atttraction_header'>
+          <p id='attraction_name'>{{attraction.name}}</p>
+          <img id='attractionIcon' src='{{attraction.icon}}'/>
+        </div>
+        <div id='attraction_details'>
+          <br>
+          <p class='details' id='rating'>Rating: {{attraction.rating}}</p>
+          <p class='details' >Address: {{attraction.address}}</p>
+        </div>
+      </div>
     </li>
-  <ul>     
+    <br>
+  </ul>     
+    <button id="clear_bttn" ng-click="deleteAttraction($index)">Clear Attractions</button>
   </div>
-  <button id="clear_bttn" ng-click="deleteAttraction($index)">Clear Attractions</button>
 </div>
   
