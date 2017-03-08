@@ -16,7 +16,7 @@ function HomeController($scope, DataFactory, $interval, $http) {
   let currLong = null;
 
 // Check if Geolocation is available in browser
-  if ("geolocation" in navigator) {
+  if ('geolocation' in navigator) {
     console.log('Geolocation is available');
   } else {
     console.log('geolocation is not available');
